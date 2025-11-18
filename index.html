@@ -3,66 +3,347 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mammini Company 401(k) — Participant Hub</title>
+  <title>Mammini Company 401(k) Plan — Participant Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Participant resource hub for Mammini Company 401(k) plan: login, guides, calculators, FAQs, and contact info." />
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; margin:0;padding:24px;background:#f5f7f8;color:#16303a}
-    header{display:flex;align-items:center;justify-content:space-between;max-width:900px;margin:0 auto 20px}
-    .card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-    a.button{background:#118aa9;color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none}
-    footer{max-width:900px;margin:24px auto;color:#475a62;font-size:13px}
+    :root{
+      --primary-1: #223743; /* deep teal */
+      --primary-2: #118aa9; /* blue-teal */
+      --primary-3: #ebdcc5; /* warm neutral */
+      --accent-1: #3e8e8a; /* support green */
+      --accent-2: #ee6b4d; /* support coral */
+    }
+    body{background: linear-gradient(180deg,var(--primary-3),#f8fafc);} 
+    .brand{color:var(--primary-1)}
+    .hero-grad{ background: linear-gradient(135deg,var(--primary-2) 0%, var(--primary-1) 100%); }
+    .card-glow{ box-shadow: 0 10px 30px rgba(34,55,67,0.08), 0 2px 8px rgba(0,0,0,0.04); }
+    .focus-outline:focus{ outline: 3px solid rgba(17,138,169,0.12); outline-offset: 3px; }
+    .accent-grad{ background: linear-gradient(90deg,var(--primary-2),var(--primary-1)); }
+    .logo-img{ width:56px; height:56px; object-fit:contain; }
   </style>
 </head>
-<body>
-  <header>
-    <div>
-      <h1 style="margin:0;color:#223743">Mammini Company — 401(k) Participant Hub</h1>
-      <div style="color:#6b7d82;font-size:14px">Simple resources, portal link, and FAQs for employees</div>
-    </div>
-    <div>
-      <a class="button" href="https://capitalgroup.retirementpartner.com/participant/#/login?accu=AmFunds" target="_blank">Access Plan Portal</a>
+<body class="antialiased text-slate-800">
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-4">
+      <img src="/mnt/data/fc096ebe-aeed-4da3-848f-f87831153ba7.png" alt="Mammini logo" class="logo-img rounded-full bg-white p-1 ring-1 ring-slate-200" />
+      <div>
+        <h1 class="text-lg font-semibold brand">Mammini Company</h1>
+        <p class="text-sm text-slate-500">401(k) Participant Hub</p>
+      </div>
+    </a>
+    <nav class="hidden md:flex gap-4 items-center">
+      <a href="#quick-links" class="text-sm hover:underline">Quick Links</a>
+      <a href="#calculator" class="text-sm hover:underline">Calculator</a>
+      <a href="#faqs" class="text-sm hover:underline">FAQs</a>
+      <a href="#resources" class="text-sm hover:underline">Resources</a>
+      <a href="#contact" class="text-sm hover:underline">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a id="plan-login-btn" href="https://capitalgroup.retirementpartner.com/participant/#/login?accu=AmFunds" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-sm font-medium ring-1 ring-slate-200 hover:shadow-sm focus-outline">
+        Access Your Account
+      </a>
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-white ring-1 ring-slate-200 focus-outline">Menu</button>
     </div>
   </header>
 
-  <main style="max-width:900px;margin:18px auto;display:grid;gap:16px">
-    <section class="card">
-      <h2 style="margin-top:0">Plan snapshot</h2>
-      <ul>
-        <li><strong>Eligibility:</strong> Age 21 — immediate entry</li>
-        <li><strong>Safe Harbor:</strong> 3% non-elective employer contribution</li>
-        <li><strong>Vesting:</strong> 0% &lt;1yr • 33% 1–2yrs • 66% 2–3yrs • 100% 3+yrs</li>
-        <li><strong>Roth:</strong> Available</li>
-        <li><strong>Loans:</strong> Allowed (standard loan rules)</li>
-      </ul>
+  <main id="home" class="max-w-6xl mx-auto px-6">
+    <section class="hero-grad rounded-2xl text-white p-8 md:p-12">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">Mammini Company 401(k)<br/><span class="text-slate-100/90">Participant Resource Center</span></h2>
+          <p class="mt-4 text-slate-100/80 max-w-xl">Simple guidance, tools, and plan documents for Mammini employees. Use the portal to manage your account and the resources below for help.</p>
+
+          <div class="mt-6 flex gap-3 flex-wrap">
+            <a href="#calculator" class="px-4 py-2 rounded-lg bg-white/95 text-slate-900 font-medium shadow-sm">Run the Calculator</a>
+            <a href="#faqs" class="px-4 py-2 rounded-lg bg-white/10 border border-white/25 text-white">See FAQs</a>
+            <a href="#resources" class="px-4 py-2 rounded-lg bg-white/10 border border-white/25 text-white">Documents & Guides</a>
+          </div>
+
+          <p class="mt-4 text-sm text-slate-100/80">Questions? Call (858) 444‑9750 or email <a href="mailto:info@mammini.com" class="underline">info@mammini.com</a>.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 card-glow text-slate-800">
+          <h3 class="text-lg font-semibold">Plan snapshot</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-600">
+            <li><strong>Eligibility:</strong> Age 21, immediate eligibility and entry.</li>
+            <li><strong>Safe Harbor:</strong> 3% non‑elective contribution (paid by the employer to eligible employees).</li>
+            <li><strong>Roth:</strong> Roth 401(k) option available.</li>
+            <li><strong>Loans:</strong> Loans are allowed (standard loan procedures apply).</li>
+            <li><strong>Auto-enroll/escalation:</strong> Not offered.</li>
+            <li><strong>Vesting (employer contributions):</strong> 0% until 1 year, then 33% at 1–2 yrs, 66% at 2–3 yrs, 100% at 3+ yrs.</li>
+          </ul>
+
+          <a href="https://capitalgroup.retirementpartner.com/participant/#/login?accu=AmFunds" target="_blank" class="mt-4 inline-block w-full text-center px-4 py-2 rounded-lg accent-grad text-white font-semibold">Go to Plan Login</a>
+
+          <div class="mt-4 text-xs text-slate-500">The PDF Summary Plan Description and Plan Highlights are linked in Resources below.</div>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h3 style="margin-top:0">Quick links</h3>
-      <p><a href="#enroll">Enrollment &amp; Contributions</a> • <a href="#faqs">FAQs</a> • <a href="#contact">Contact</a></p>
+    <!-- Quick Links -->
+    <section id="quick-links" class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-5 card-glow">
+        <h4 class="font-semibold">Account & Login</h4>
+        <p class="mt-2 text-sm text-slate-600">Access your retirement account to view balances, change elections, and request loans.</p>
+        <a href="https://capitalgroup.retirementpartner.com/participant/#/login?accu=AmFunds" target="_blank" class="mt-4 inline-block text-sm px-3 py-2 rounded-md bg-slate-100">Open Portal</a>
+      </div>
+
+      <div class="bg-white rounded-xl p-5 card-glow">
+        <h4 class="font-semibold">Enrollment & Contributions</h4>
+        <p class="mt-2 text-sm text-slate-600">How to enroll, contribution limits, employer safe harbor contribution, and Roth option.</p>
+        <a href="#enrollment" class="mt-4 inline-block text-sm px-3 py-2 rounded-md bg-slate-100">Learn More</a>
+      </div>
+
+      <div class="bg-white rounded-xl p-5 card-glow">
+        <h4 class="font-semibold">Education & Tools</h4>
+        <p class="mt-2 text-sm text-slate-600">Calculators, fund summaries, and helpful guides.</p>
+        <a href="#resources" class="mt-4 inline-block text-sm px-3 py-2 rounded-md bg-slate-100">Open Resources</a>
+      </div>
     </section>
 
-    <section id="enroll" class="card">
-      <h3 style="margin-top:0">How to enroll</h3>
-      <ol>
-        <li>Click <em>Access Plan Portal</em> and log in (or create an account).</li>
-        <li>Choose Traditional (pre-tax) or Roth. Set payroll deferral %.</li>
-        <li>Consider contributing at least 3% (you still receive the safe-harbor 3%).</li>
-      </ol>
+    <!-- Enrollment & How it Works -->
+    <section id="enrollment" class="mt-10 grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl p-6 card-glow">
+        <h3 class="text-xl font-semibold">Enrollment & Contributions</h3>
+        <p class="mt-3 text-sm text-slate-600">To enroll: use the portal, pick a contribution percentage (pre‑tax or Roth), and select investments. Consider contributing at least 3% to receive full safe harbor credit (you receive the 3% regardless of your contribution).</p>
+
+        <ul class="mt-4 list-disc pl-5 text-sm text-slate-600 space-y-2">
+          <li><strong>Step 1:</strong> Click "Open Portal" and log in (or create an account).</li>
+          <li><strong>Step 2:</strong> Choose Traditional (pre‑tax) or Roth (after‑tax) contributions.</li>
+          <li><strong>Step 3:</strong> Set payroll contribution percent.</li>
+          <li><strong>Step 4:</strong> Select investments or use the default target date fund.</li>
+        </ul>
+
+        <div class="mt-4 text-sm text-slate-500">2025 contribution limit examples: $23,500 standard; $7,500 catch-up (50+). Confirm current limits on your portal or the IRS website.</div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 card-glow">
+        <h3 class="text-xl font-semibold">Employer Match & Vesting</h3>
+        <p class="mt-3 text-sm text-slate-600">Safe Harbor non‑elective: 3% of pay credited for eligible participants (paid by Mammini regardless of your deferral). Employer match rules and additional non‑elective contributions, if any, are described in the plan documents.</p>
+        <div class="mt-3 text-sm text-slate-600">
+          <p><strong>Vesting (employer contributions):</strong> 0% under 1 year; 33% at 1–2 yrs; 66% at 2–3 yrs; 100% at 3+ yrs.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="faqs" class="card">
-      <h3 style="margin-top:0">FAQs</h3>
-      <p><strong>Q:</strong> Can I take a loan? <br><strong>A:</strong> Yes — contact plan admin for details.</p>
-      <p><strong>Q:</strong> Who do I call for help? <br><strong>A:</strong> (858) 444-9750 or info@mammini.com</p>
+    <!-- Calculator -->
+    <section id="calculator" class="mt-10">
+      <div class="bg-white rounded-xl p-6 card-glow">
+        <h3 class="text-xl font-semibold">Retirement Savings Calculator</h3>
+        <p class="mt-2 text-sm text-slate-600">Estimate future balance based on current contributions, expected returns, and years to retirement.</p>
+
+        <form id="calc-form" class="mt-4 grid sm:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="text-sm text-slate-600">Current balance</span>
+            <input id="current-balance" type="number" min="0" step="100" value="10000" class="mt-1 w-full rounded-md border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 p-2" />
+          </label>
+          <label class="block">
+            <span class="text-sm text-slate-600">Annual contribution</span>
+            <input id="yearly-contribution" type="number" min="0" step="100" value="6000" class="mt-1 w-full rounded-md border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 p-2" />
+          </label>
+
+          <label class="block">
+            <span class="text-sm text-slate-600">Years until retirement</span>
+            <input id="years" type="number" min="1" step="1" value="20" class="mt-1 w-full rounded-md border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 p-2" />
+          </label>
+
+          <label class="block">
+            <span class="text-sm text-slate-600">Expected annual return (%)</span>
+            <input id="return" type="number" min="0" step="0.1" value="6" class="mt-1 w-full rounded-md border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 p-2" />
+          </label>
+
+          <div class="sm:col-span-2 flex gap-2 items-center">
+            <button id="run-calc" type="button" class="px-4 py-2 rounded-md bg-[var(--primary-1)] text-white font-medium">Calculate</button>
+            <button id="reset-calc" type="button" class="px-4 py-2 rounded-md bg-slate-100">Reset</button>
+          </div>
+        </form>
+
+        <div id="calc-result" class="mt-4 bg-slate-50 border border-dashed border-slate-200 p-4 rounded-md text-sm text-slate-700">
+          <strong>Result:</strong> <span id="result-text">Enter values and click Calculate.</span>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="card">
-      <h3 style="margin-top:0">Contact</h3>
-      <p>Phone: (858) 444-9750<br>Email: <a href="mailto:info@mammini.com">info@mammini.com</a></p>
+    <!-- Resources -->
+    <section id="resources" class="mt-10 grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl p-6 card-glow">
+        <h3 class="text-xl font-semibold">Educational Resources</h3>
+        <p class="mt-2 text-sm text-slate-600">Guides, fund summaries, and videos to help you choose.
+        </p>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex items-start gap-3">
+            <div class="w-3 h-3 rounded-full bg-[var(--primary-2)] mt-2"></div>
+            <div>
+              <strong>Summary Plan Description (SPD)</strong>
+              <div class="text-xs text-slate-500">Full legal summary of rights and rules.</div>
+              <div class="mt-1"><a class="text-sm text-[var(--primary-1)] hover:underline" href="/mnt/data/THE_MAMMINI_COMPANY_RETIREMENT_SAVINGS_PLAN_-_Summary_Plan_Description.doc.pdf" target="_blank">Open SPD</a></div>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-3">
+            <div class="w-3 h-3 rounded-full bg-[var(--accent-2)] mt-2"></div>
+            <div>
+              <strong>Plan Highlights</strong>
+              <div class="text-xs text-slate-500">Concise plan features and quick reference.</div>
+              <div class="mt-1"><a class="text-sm text-[var(--primary-1)] hover:underline" href="/mnt/data/THE MAMMINI COMPANY RETIREMENT SAVINGS PLAN.Highlights.pdf" target="_blank">Open Highlights</a></div>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-3">
+            <div class="w-3 h-3 rounded-full bg-amber-400 mt-2"></div>
+            <div>
+              <strong>Video Lessons</strong>
+              <div class="text-xs text-slate-500">Short explainers — placeholders below; add YouTube/Vimeo iframe when ready.</div>
+              <div class="mt-2 grid sm:grid-cols-2 gap-2">
+                <div class="border rounded-md p-3">
+                  <div class="aspect-video bg-slate-100 rounded-md flex items-center justify-center text-slate-500">Video placeholder</div>
+                  <div class="mt-2 text-xs">How to enroll — (replace with iframe embed)</div>
+                </div>
+                <div class="border rounded-md p-3">
+                  <div class="aspect-video bg-slate-100 rounded-md flex items-center justify-center text-slate-500">Video placeholder</div>
+                  <div class="mt-2 text-xs">Choosing investments — (replace with iframe embed)</div>
+                </div>
+              </div>
+              <div class="mt-2 text-xs text-slate-500">Instruction: Replace the placeholder with a standard embed such as &lt;iframe src="https://www.youtube.com/embed/YOUR_ID" class="w-full h-48"&gt;&lt;/iframe&gt;.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 card-glow">
+        <h3 class="text-xl font-semibold">Plan Documents</h3>
+        <p class="mt-2 text-sm text-slate-600">Key downloadable documents for your records.</p>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Summary Plan Description (SPD)</div>
+              <div class="text-xs text-slate-500">(legal plan terms)</div>
+            </div>
+            <a href="/mnt/data/THE_MAMMINI_COMPANY_RETIREMENT_SAVINGS_PLAN_-_Summary_Plan_Description.doc.pdf" target="_blank" class="text-[var(--primary-1)] text-sm">Open</a>
+          </li>
+          <li class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Plan Highlights</div>
+              <div class="text-xs text-slate-500">Quick reference summary.</div>
+            </div>
+            <a href="/mnt/data/THE MAMMINI COMPANY RETIREMENT SAVINGS PLAN.Highlights.pdf" target="_blank" class="text-[var(--primary-1)] text-sm">Open</a>
+          </li>
+          <li class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">Fund Fact Sheets</div>
+              <div class="text-xs text-slate-500">One‑pagers for each fund — coming soon.</div>
+            </div>
+            <a href="#" class="text-[var(--primary-1)] text-sm">Coming soon</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs" class="mt-10">
+      <div class="bg-white rounded-xl p-6 card-glow">
+        <h3 class="text-xl font-semibold">FAQs</h3>
+        <div class="mt-4 space-y-4 text-sm text-slate-600">
+          <details class="p-3 bg-slate-50 rounded"><summary class="font-medium">How do I enroll?</summary><div class="mt-2">Enroll via the participant portal. Need help? Call (858) 444‑9750 or email info@mammini.com.</div></details>
+          <details class="p-3 bg-slate-50 rounded"><summary class="font-medium">What is the safe harbor contribution?</summary><div class="mt-2">Mammini provides a 3% non‑elective safe harbor contribution to eligible employees each Plan Year (you receive it whether you defer or not).</div></details>
+          <details class="p-3 bg-slate-50 rounded"><summary class="font-medium">Are loans allowed?</summary><div class="mt-2">Yes. The plan permits loans subject to the Loan Procedures. Contact the plan administrator for details.</div></details>
+          <details class="p-3 bg-slate-50 rounded"><summary class="font-medium">Can I contribute to a Roth?</summary><div class="mt-2">Yes — Roth 401(k) contributions are available. Consult a tax advisor for implications.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mt-10 mb-16 grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl p-6 card-glow">
+        <h3 class="text-xl font-semibold">Need help?</h3>
+        <p class="mt-2 text-sm text-slate-600">Contact the plan administrator or HR representative for account-specific questions.</p>
+        <ul class="mt-4 text-sm text-slate-600 space-y-2">
+          <li><strong>Phone:</strong> (858) 444‑9750</li>
+          <li><strong>Email:</strong> <a href="mailto:info@mammini.com" class="text-[var(--primary-1)]">info@mammini.com</a></li>
+          <li><strong>Plan documents:</strong> Summary Plan Description & Plan Highlights (links above).</li>
+        </ul>
+
+        <div class="mt-4">
+          <a href="mailto:info@mammini.com?subject=Schedule%20a%20401(k)%20meeting" id="schedule-btn" class="px-4 py-2 rounded-md bg-[var(--primary-1)] text-white">Schedule a meeting</a>
+          <div class="mt-2 text-xs text-slate-500">For workshops or enrollment events, contact HR.</div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 card-glow">
+        <h3 class="text-xl font-semibold">Submit a question</h3>
+        <p class="mt-2 text-sm text-slate-600">Send a non-sensitive question here and we'll respond within 3 business days.</p>
+        <form id="contact-form" class="mt-4 space-y-3">
+          <input id="q-name" type="text" placeholder="Your name" class="w-full p-2 rounded-md border border-slate-200" />
+          <input id="q-email" type="email" placeholder="Your email" class="w-full p-2 rounded-md border border-slate-200" />
+          <textarea id="q-question" rows="4" placeholder="Your question" class="w-full p-2 rounded-md border border-slate-200"></textarea>
+          <div class="flex items-center gap-3">
+            <button type="button" id="submit-question" class="px-4 py-2 rounded-md bg-[var(--accent-1)] text-white">Send question</button>
+            <div id="submit-msg" class="text-sm text-slate-500"></div>
+          </div>
+        </form>
+        <div class="mt-2 text-xs text-slate-500">Do not include sensitive personal information (full account numbers, SSN) in this form.</div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    © Mammini Company — 401(k) Participant Hub
+  <footer class="border-t py-6 mt-8">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-slate-600">© Mammini Company — 401(k) Participant Hub</div>
+      <div class="text-sm text-slate-600">Made for participants • <a href="#resources" class="text-[var(--primary-1)]">Resources</a> • <a href="#faqs" class="text-[var(--primary-1)]">FAQs</a></div>
+    </div>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    mobileBtn?.addEventListener('click', ()=>{
+      const nav = document.querySelector('header nav');
+      if(nav.style.display === 'flex') nav.style.display = '';
+      else nav.style.display = 'flex';
+    });
+
+    // Simple retirement calculator
+    function futureValue(balance, contribution, years, annualReturn){
+      const r = annualReturn/100;
+      let fv = balance * Math.pow(1+r, years);
+      for(let i=1;i<=years;i++){
+        fv += contribution * Math.pow(1+r, years - i + 0);
+      }
+      return fv;
+    }
+
+    const runBtn = document.getElementById('run-calc');
+    const resetBtn = document.getElementById('reset-calc');
+    const resultText = document.getElementById('result-text');
+
+    runBtn?.addEventListener('click', ()=>{
+      const balance = Number(document.getElementById('current-balance').value) || 0;
+      const contrib = Number(document.getElementById('yearly-contribution').value) || 0;
+      const years = Number(document.getElementById('years').value) || 0;
+      const ret = Number(document.getElementById('return').value) || 0;
+      const fv = futureValue(balance, contrib, years, ret);
+      resultText.innerHTML = `Estimated balance in ${years} years: <strong>$${fv.toLocaleString(undefined,{maximumFractionDigits:0})}</strong> (assumes ${ret}% annual return)`;
+    });
+
+    resetBtn?.addEventListener('click', ()=>{
+      document.getElementById('current-balance').value = 10000;
+      document.getElementById('yearly-contribution').value = 6000;
+      document.getElementById('years').value = 20;
+      document.getElementById('return').value = 6;
+      resultText.textContent = 'Enter values and click Calculate.';
+    });
+
+    // Contact form (client-side only; for production wire to an endpoint)
+    document.getElementById('submit-question')?.addEventListener('click', ()=>{
+      const name = document.getElementById('q-name').value.trim();
+      const email = document.getElementById('q-email').value.trim();
+      const q = document.getElementById('q-question').value.trim();
+      const msg = document.getElementById('submit-msg');
+      if(!name || !email || !q){ msg.textContent = 'Please complete all fields.'; return; }
+      msg.textContent = 'Thanks — your question has been submitted. We will follow up by email.';
+      document.getElementById('contact-form').reset();
+    });
+  </script>
 </body>
 </html>
